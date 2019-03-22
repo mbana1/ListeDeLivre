@@ -1,0 +1,159 @@
+﻿
+
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+
+
+<html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href=@Url.Content("~/css/livre.css") />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    <meta name="viewport" content="width=device-width" />
+    <title>EcranDetail</title>
+</head>
+<body>
+    <div>
+        <div class="header clearfix">
+            <nav>
+                <ul class="nav nav-pills pull-right">
+                    <li role="presentation" class="active"><a href="http://localhost:50639/Livres/EcranAccueil">Accueil</a></li>
+                    <li role="presentation"><a href="http://localhost:50639/Livres/EcranDetail">Détails</a></li>
+                    <li role="presentation"><a href="http://localhost:50639/Livres/ConfirmationNotation"> Confirmation De Lecture</a></li>
+                    <li role="presentation"><a href="http://localhost:50639/Livres/ConfirmationNotation"> Notation</a></li>
+                </ul>
+            </nav>
+            <h3 class="text-muted">Bienvenu sur ma lite de lecture!</h3>
+            <form>
+                <fieldset style="border:5px groove">
+                    <legend>Mes livres lus</legend>
+                    <table class="table table-hover table-sm table-bordered">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th></th>
+                                <th>Titre</th>
+                                <th>Auteur</th>
+                                <th>Date de début</th>
+                                <th>Note</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <a href="@Url.Action("EcranDetail")"><i class="fa fa-book "></i></a>
+                                </td>
+                                <td>Mon premier titre</td>
+                                <td>Mon premier auteur</td>
+                                <td>18/02/2017</td>
+                                <td>
+                                    <a href="@Url.Action("EcranDetail")"><i class="fa fa-star"></i></a>
+                                    <a href="@Url.Action("EcranDetail")"><i class="fa fa-star"></i></a>
+                                    <a href="@Url.Action("EcranDetail")"> <i class="fa fa-star"></i></a>
+                                    <a href="@Url.Action("EcranDetail")"><i class="fa fa-star"></i></a>
+                                    <a href="@Url.Action("EcranDetail")"><i class="fa fa-star-o"></i></a>
+
+
+
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <a href="@Url.Action("EcranDetail")"> <i class="fa fa-book "></i></a>
+                                </td>
+                                <td>Mon second titre</td>
+                                <td>Toto</td>
+                                <td>21/01/2018</td>
+                                <td>
+                                    <a href="@Url.Action("EcranDetail")"> <i class="fa fa-star-o"></i></a>
+                                    <a href="@Url.Action("EcranDetail")"> <i class="fa fa-star-o"></i></a>
+                                    <a href="@Url.Action("EcranDetail")"> <i class="fa fa-star-o"></i></a>
+                                    <a href="@Url.Action("EcranDetail")"> <i class="fa fa-star-o"></i></a>
+                                    <a href="@Url.Action("EcranDetail")"> <i class="fa fa-star-o"></i></a>
+
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </fieldset>
+                <div style="text-align:right; height:50px">
+                    <button type="button" class="btn btn-primary">Débuter un nouveau livre</button>
+                </div>
+            </form>
+
+            @*<div style="text-align:right; height:50px">
+                    <button type="button" class="btn btn-primary">Débuter un nouveau livre</button>
+                </div>*@
+            <form>
+                <fieldset style="border:5px groove">
+                    <legend>Mes livres lus</legend>
+                    <table class="table table-hover table-sm table-bordered">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th></th>
+                                <th>Titre</th>
+                                <th>Auteur</th>
+                                <th>Date de début</th>
+                                <th>Note</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <a href="@Url.Action("EcranDetail")"><i class="fa fa-book "></i></a>
+                                </td>
+                                <td>Mon premier titre</td>
+                                <td>Mon premier auteur</td>
+                                <td>18/02/2017</td>
+                                <td>
+                                    <a href="@Url.Action("EcranDetail")"><i class="fa fa-star"></i></a>
+                                    <a href="@Url.Action("EcranDetail")"><i class="fa fa-star"></i></a>
+                                    <a href="@Url.Action("EcranDetail")"> <i class="fa fa-star"></i></a>
+                                    <a href="@Url.Action("EcranDetail")"><i class="fa fa-star"></i></a>
+                                    <a href="@Url.Action("EcranDetail")"><i class="fa fa-star-o"></i></a>
+
+
+
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <a href="@Url.Action("EcranDetail")"> <i class="fa fa-book "></i></a>
+                                </td>
+                                <td>Mon second titre</td>
+                                <td>Toto</td>
+                                <td>21/01/2018</td>
+                                <td>
+                                    <a href="@Url.Action("EcranDetail")"> <i class="fa fa-star-o"></i></a>
+                                    <a href="@Url.Action("EcranDetail")"> <i class="fa fa-star-o"></i></a>
+                                    <a href="@Url.Action("EcranDetail")"> <i class="fa fa-star-o"></i></a>
+                                    <a href="@Url.Action("EcranDetail")"> <i class="fa fa-star-o"></i></a>
+                                    <a href="@Url.Action("EcranDetail")"> <i class="fa fa-star-o"></i></a>
+
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </fieldset>
+
+            </form>
+
+
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>

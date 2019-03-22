@@ -1,0 +1,81 @@
+﻿@model ListeDeLivre.Models.DetailModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    <meta name="viewport" content="width=device-width" />
+    <title>Ecran de Détail</title>
+</head>
+<body>
+    <div>
+        <div class="header clearfix">
+            <nav>
+                <ul class="nav nav-pills pull-right">
+                    <li role="presentation" class="active"><a href="http://localhost:50639/Livres/EcranAccueil">Accueil</a></li>
+                    <li role="presentation"><a href="http://localhost:50639/Livres/EcranDetail">Détails</a></li>
+                    <li role="presentation"><a href="http://localhost:50639/Livres/ConfirmationNotation"> Confirmation De Lecture</a></li>
+                    <li role="presentation"><a href="http://localhost:50639/Livres/ConfirmationNotation"> Notation</a></li>
+                </ul>
+            </nav>
+            <h3 class="text-muted">@Model.Titre</h3>
+        </div>
+        <div> Auteur : @Model.Auteur</div>
+        <div> Date de debut de lecture :   @Model.DateDebut.ToShortDateString()</div>
+        <div>
+            
+
+
+            @if (@Model.DateDeFin.HasValue)
+            {
+
+
+                <div> Date de fin de lecture:  @Model.DateDeFin.Value.ToShortDateString()</div>
+
+            }
+            else
+            {
+                <div> Livre en cour de lecture</div>
+            }
+
+
+
+        </div>
+        <div>
+            Note :
+       
+           
+            @for (int i = 1; i < 6; i++)
+
+            {
+                if (@Model.Note > i)
+                {
+
+
+                    <i class="fa fa-star"></i>
+
+                }
+                else
+                { <i class="fa fa-star-o"></i>}
+
+            }
+
+        </div>
+
+
+
+                 
+
+            </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>
