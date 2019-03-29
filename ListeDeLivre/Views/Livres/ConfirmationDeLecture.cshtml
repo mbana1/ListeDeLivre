@@ -1,4 +1,4 @@
-﻿
+﻿@model ListeDeLivre.Models.Confirmationlecture
 @{
     Layout = null;
 }
@@ -23,6 +23,13 @@
                     <li role="presentation"><a href="http://localhost:50639/Livres/ConfirmationNotation"> Notation</a></li>
                 </ul>
             </nav>
+
+            <div>
+                <div class="alert alert-success" role="alert">
+                    Vous avez bien terminé: @Model.Titre  le :@Model.DateFinDeLecture.ToLongTimeString();
+                </div>
+            </div>
+
             <h3 class="text-muted">Bienvenu sur ma lite de lecture!</h3>
         </div>
     </div>

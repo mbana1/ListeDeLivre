@@ -101,7 +101,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Confirmationlecture.cs" />
+    <Compile Include="Models\DataAcces.cs" />
     <Compile Include="Models\DetailModel.cs" />
+    <Compile Include="Models\Livres.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -111,6 +114,8 @@
     <Content Include="Views\Livres\EcranDetail.cshtml" />
     <Content Include="Views\Livres\ConfirmationDeLecture.cshtml" />
     <Content Include="Views\Livres\ConfirmationNotation.cshtml" />
+    <Content Include="Views\Livres\CreerUnLivre.cshtml" />
+    <Content Include="Views\Livres\ConfirmationDeCreation.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

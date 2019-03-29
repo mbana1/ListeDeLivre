@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Data.SqlClient;
 
+
 namespace ListeDeLivre.Controllers
 {
     public class LivresController : Controller
@@ -18,11 +19,19 @@ namespace ListeDeLivre.Controllers
         }
         public ActionResult EcranDetail(int id)
         {
+            DetailModel model = DataAcces.ListeDelivresenBDD(id);
 
-            return View(ListeDelivresenBDD(id));
+
+            return View(model);
+           
         }
-        public ActionResult ConfirmationDeLecture()
+        public ActionResult ConfirmationDeLecture(int id)
         {
+
+            Confirmationlecture confirmationlecture = DataAcces.ChargerConfirmationLectureDepuisBDD(id);
+
+
+
             return View();
         }
 
@@ -30,41 +39,20 @@ namespace ListeDeLivre.Controllers
         {
             return View();
         }
-        public DetailModel ListeDelivresenBDD(int id)
+        public ActionResult CreerUnLivre()
         {
-            const string cheminBase = @"Server=.\sqlexpress;Initial Catalog = ListeLecture; Integrated Security = True";
-            SqlConnection connection = new SqlConnection(cheminBase);
+            return View();
+        }
+        public ActionResult SubmitCreationLivre(string Titre, string Auteur)
+        {
+            DataAcces.InsererLesLivresDansLaBDD(Titre, Auteur);
+            return RedirectToAction("ConfirmationDeCreation");
 
-
-
-            connection.Open();
-
-            SqlCommand command = new SqlCommand("SELECT Titre,Auteur,Note,DateDebut,DateDeFin FROM Livre where IDlivre=@id", connection);
-            command.Parameters.AddWithValue("@id", id);
-            SqlDataReader datareader = command.ExecuteReader();
-
-            datareader.Read();
-
-            string titre = datareader.GetString(0);
-
-            string auteur = datareader.GetString(1);
-
-            DateTime dateDebut = datareader.GetDateTime(3);
-            DateTime? dateDeFin = datareader.IsDBNull(4)?null: (DateTime?)datareader[4]; ;
-            Byte? note = datareader.IsDBNull(2) ? null : (byte?)datareader[2];
-            DetailModel detail = new DetailModel(titre, auteur, dateDebut, dateDeFin, note);
-
-
-
-
-
-
-            connection.Close();
-            command.Parameters.Clear();
-            return detail;
-
+            
+        }
+        public ActionResult ConfirmationDeCreation()
+        {
+            return View();
         }
     }
-
-
 }

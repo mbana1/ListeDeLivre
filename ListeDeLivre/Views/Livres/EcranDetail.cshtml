@@ -26,19 +26,19 @@
                     <li role="presentation"><a href="http://localhost:50639/Livres/ConfirmationNotation"> Notation</a></li>
                 </ul>
             </nav>
-            <h3 class="text-muted">@Model.Titre</h3>
+            <h3 class="text-muted">@Model.Livrecourant.Titre</h3>
         </div>
-        <div> Auteur : @Model.Auteur</div>
-        <div> Date de debut de lecture :   @Model.DateDebut.ToShortDateString()</div>
+        <div> Auteur : @Model.Livrecourant.Auteur</div>
+        <div> Date de debut de lecture :   @Model.Livrecourant.DateDebut.ToShortDateString()</div>
         <div>
-            
 
 
-            @if (@Model.DateDeFin.HasValue)
+
+            @if (@Model.Livrecourant.DateDeFin.HasValue)
             {
 
 
-                <div> Date de fin de lecture:  @Model.DateDeFin.Value.ToShortDateString()</div>
+                <div> Date de fin de lecture:  @Model.Livrecourant.DateDeFin.Value.ToShortDateString()</div>
 
             }
             else
@@ -51,12 +51,12 @@
         </div>
         <div>
             Note :
-       
-           
+
+
             @for (int i = 1; i < 6; i++)
 
             {
-                if (@Model.Note > i)
+                if (@Model.Livrecourant.Note > i)
                 {
 
 
@@ -69,12 +69,9 @@
             }
 
         </div>
-
-
-
-                 
-
-            </div>
+        
+        
+    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
